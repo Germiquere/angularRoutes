@@ -1,0 +1,18 @@
+<div class="input-container">
+  <label [for]="id">{{ label }}</label>
+  <div class="input-group">
+    <i [class]="'fa-solid ' + icon"></i>
+    <input
+      [type]="type"
+      [id]="id"
+      [placeholder]="placeholder"
+      error="error"
+      errorMessage="errorMessage"
+    />
+  </div>
+
+  <!-- <div class="error-container">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <p>{{ errorMessage }}</p>
+  </div> -->
+</div>
