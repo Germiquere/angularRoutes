@@ -5,6 +5,7 @@
   border: none;
   cursor: pointer;
 }
+
 .btn:hover {
   background-color: var(--color-hover);
 }
@@ -22,4 +23,8 @@
   background-color: var(--color-primary-gray);
   color: var(--color-white);
   /* border: 1px solid #007bff; */
+}
+.btn:disabled {
+  background-color: var(--color-primary-gray);
+  cursor: not-allowed;
 }

@@ -1,13 +1,14 @@
 <div class="input-container">
-  <label [for]="id">{{ label }}</label>
+  <label [for]="inputId">{{ label }}</label>
   <div class="input-group">
     <i [class]="'fa-solid ' + icon"></i>
     <input
       [type]="type"
-      [id]="id"
+      [id]="inputId"
       [placeholder]="placeholder"
       error="error"
       errorMessage="errorMessage"
+      [formControl]="formControl"
     />
   </div>
 

@@ -3,21 +3,30 @@
     <img src="../../../../assets/image pink.png" alt="logo de la empresa" />
     <h1>Ingresar</h1>
   </div>
-  <form class="inputs-container">
+  <form class="inputs-container" [formGroup]="loginForm" (submit)="login()">
     <div class="inputs-group">
       <shared-input
         placeholder="Ingresa tu email"
         label="Email"
+        type="email"
         icon="fa-envelope"
+        formControlName="email"
+        inputId="email"
       ></shared-input>
       <shared-input
         placeholder="Ingresa tu contraseña"
         label="Contraseña"
+        type="password"
         icon="fa-lock"
+        formControlName="password"
+        inputId="password"
       ></shared-input>
     </div>
     <div class="btn-container">
-      <shared-button label="Ingresar"></shared-button>
+      <shared-button
+        label="Ingresar"
+        [disabled]="loginForm.invalid"
+      ></shared-button>
     </div>
   </form>
 </div>
