@@ -16,6 +16,10 @@ export class AuthService {
   get authStatus(): AuthStatus {
     return this._authStatus;
   }
+  setAuthStatus(status: AuthStatus) {
+    this._authStatus = status;
+  }
+
   login(email: string, password: string): Observable<boolean> {
     const url = `${this.baseUrl}users/auth/login`;
     const body = { email, password };
@@ -29,6 +33,12 @@ export class AuthService {
       map(() => true),
       //   AL usar el catcherror con el trhowError me perimite usar en el subscribe un objeto con el next y con el error
       catchError((error) => {
+        console.log(error);
+
+        if (error.error.message === undefined) {
+          return throwError(() => 'Se ha producido un error');
+        }
+
         return throwError(() => error.error.message);
       })
     );
