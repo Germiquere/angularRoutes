@@ -12,6 +12,8 @@ export class HomeLayoutComponent implements OnInit {
   get user() {
     return this.authService.currentUser;
   }
-
+  logout() {
+    this.authService.logout();
+  }
   ngOnInit(): void {}
 }

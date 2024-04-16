@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
   login() {
     console.log(this.loginForm.value);
     const { email, password } = this.loginForm.value;
-    this.authService.login(email, password).subscribe({
+    this.authService.login$(email, password).subscribe({
       next: () => this.router.navigateByUrl('/home'),
       error: (message) => {
         this.toastrService.error(message);

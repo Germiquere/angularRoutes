@@ -19,6 +19,9 @@ export class isAuthennnticatedGuard implements CanActivate {
     if (this.authService.authStatus === AuthStatus.authenticated) {
       return true;
     }
+    if (this.authService.authStatus === AuthStatus.checking) {
+      return false;
+    }
     this.router.navigateByUrl('/auth/login');
     return false;
   }
