@@ -64,7 +64,7 @@ export class AuthService {
     const token = localStorage.getItem('token');
     // agregar el logout y el clear del store
     if (!token) return this.logout();
-    setTimeout(() => {
+
       this.checkToken$(token).subscribe({
         next: ({ user }) => {
           this.setData(user, AuthStatus.authenticated);
@@ -75,7 +75,7 @@ export class AuthService {
           this.logout();
         },
       });
-    });
+
   }
 
   logout() {
