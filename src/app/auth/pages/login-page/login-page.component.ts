@@ -3,12 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { AuthStatus } from '../../interfaces';
 @Component({
   selector: 'auth-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent implements OnInit {
+  public loading: boolean = false;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -21,11 +23,15 @@ export class LoginPageComponent implements OnInit {
   });
   ngOnInit(): void {}
   login() {
-    console.log(this.loginForm.value);
+    this.loading = true;
     const { email, password } = this.loginForm.value;
     this.authService.login$(email, password).subscribe({
-      next: () => this.router.navigateByUrl('/home'),
+      next: () => {
+        this.router.navigateByUrl('/home');
+        this.loading = false;
+      },
       error: (message) => {
+        this.loading = false;
         this.toastrService.error(message);
       },
     });

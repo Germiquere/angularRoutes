@@ -1,9 +1,15 @@
 .btn {
-  padding: var(--mp-3);
+  padding:var(--mp-1) var(--mp-3);
+  line-height: var(--lh-lg);
   width: 100%;
   border-radius: var(--mp-5);
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
 }
 
 .btn:hover {
@@ -27,4 +33,25 @@
 .btn:disabled {
   background-color: var(--color-primary-gray);
   cursor: not-allowed;
+}
+.btn-loader{
+  display: inline-block;
+  margin: var(--mp-1);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-bg-gray);
+  border-radius: 50%;
+  border-top-color: var(--color-primary-gray);
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }

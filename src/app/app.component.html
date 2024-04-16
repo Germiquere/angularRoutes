@@ -1,4 +1,10 @@
 <main>
-  <h1 *ngIf="!finishAuthCheck()">Loading</h1>
+  <div
+    class="main-loader-container animate__animated animate__fadeIn"
+    *ngIf="!finishAuthCheck()"
+  >
+    <h1>PANTALLA DE CARGA</h1>
+    <div class="main-loader"></div>
+  </div>
   <router-outlet *ngIf="finishAuthCheck()"></router-outlet>
 </main>

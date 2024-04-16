@@ -1,3 +1,10 @@
-<button class="btn" [ngClass]="btnStyle" [disabled]="disabled">
-  {{ label }}
+<button
+  class="btn"
+  [class.loading]="loading"
+  [class.primary]="btnStyle === 'primary' && !loading"
+  [class.secondary]="btnStyle === 'secondary' && !loading"
+  [disabled]="isDisabled()"
+>
+<p *ngIf="!loading">  {{ label }}</p>
+<span class="btn-loader"  *ngIf="loading"></span>
 </button>

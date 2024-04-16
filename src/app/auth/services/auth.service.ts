@@ -51,8 +51,6 @@ export class AuthService {
       map(() => true),
       //   AL usar el catcherror con el trhowError me perimite usar en el subscribe un objeto con el next y con el error
       catchError((error) => {
-        console.log(error);
-
         if (error.error.message === undefined) {
           return throwError(() => 'Se ha producido un error');
         }
@@ -65,20 +63,24 @@ export class AuthService {
   autoLogin() {
     const token = localStorage.getItem('token');
     // agregar el logout y el clear del store
-    if (!token) return;
-    this.checkToken$(token).subscribe({
-      next: ({ user }) => {
-        this.setData(user, AuthStatus.authenticated);
-        this.router.navigateByUrl('/home');
-      },
-      error: () => {
-        this._authStatus = AuthStatus.notAuthenticated;
-        // logout
-      },
+    if (!token) return this.logout();
+    setTimeout(() => {
+      this.checkToken$(token).subscribe({
+        next: ({ user }) => {
+          this.setData(user, AuthStatus.authenticated);
+          this.router.navigateByUrl('/home');
+        },
+        error: () => {
+          this._authStatus = AuthStatus.notAuthenticated;
+          this.logout();
+        },
+      });
     });
   }
+
   logout() {
     localStorage.removeItem('token');
+    this.setAuthStatus(AuthStatus.notAuthenticated);
     this.router.navigateByUrl('/auth/login');
   }
 
