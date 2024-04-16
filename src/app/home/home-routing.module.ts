@@ -4,6 +4,9 @@ import { HomeLayoutComponent } from './layout/home-layout/home-layout.component'
 import { ShopPageComponent } from './pages/shop/shop-page.component';
 import { DriverPageComponent } from './pages/driver/driver-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page.component';
+import { ShopRolGuard } from './guards/ShopRol.guard';
+import { AdminRolGuard } from './guards/AdminRol.guard';
+import { DriverRolGuard } from './guards/DriverRol.guard';
 
 const routes: Routes = [
   {
@@ -12,14 +15,17 @@ const routes: Routes = [
     children: [
       {
         path: 'shop',
+        canActivate:[ShopRolGuard],
         component: ShopPageComponent,
       },
       {
         path: 'driver',
+        canActivate:[DriverRolGuard],
         component: DriverPageComponent,
       },
       {
         path: 'admin',
+        canActivate:[AdminRolGuard],
         component: AdminPageComponent,
       },
       // {

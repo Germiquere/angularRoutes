@@ -1,18 +1,7 @@
 
-<main>
-    <pre>{{ user | json }}</pre>
+<main class="animate__animated animate__fadeIn">
+    <!-- <pre>{{ user | json }}</pre> -->
     <button (click)="logout()">Logout</button>
-    <nav>
-        <a routerLink="shop">
-            negocio
-        </a>
-        <a routerLink="driver">
-           cadete
-        </a>
-        <a routerLink="admin">
-            admin
-        </a>
-    </nav>
     <router-outlet></router-outlet>
 </main>
 
