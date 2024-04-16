@@ -1,0 +1,26 @@
+.main-header{
+    padding-bottom: var(--mp-3);
+    /* font-size: var(--text-xl); */
+}
+.menu-icon{
+    width: 20px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+.top-bar,.center-bar,.bottom-bar{
+    height: 2px;
+    background-color: var(--color-black);
+    border-radius: 10px;
+}
+.top-bar{
+    width: 100%;
+}
+.center-bar{
+    width: 45%;
+}
+.bottom-bar{
+    width: 100%;
+}
