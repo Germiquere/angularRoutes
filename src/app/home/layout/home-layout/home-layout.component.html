@@ -1,8 +1,12 @@
 
-<main class="animate__animated animate__fadeIn home-layout">
-    <!-- <pre>{{ user | json }}</pre> -->
-    <home-header></home-header>
-    <button (click)="logout()">Logout</button>
-    <router-outlet></router-outlet>
+<main class="animate__animated animate__fadeIn container-home-layout">
+    <div class="home-sidebar-mobile">
+        <home-sidebar-mobile></home-sidebar-mobile>
+    </div>
+    <div class="home-layout" [ngClass]="{'home-layout-translate':toggleMenu}">
+        <home-header (menuIconClicked)="handleMenuIconClicked()"></home-header>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="fake-home-layout" (click)="handleMenuIconClicked()" [ngClass]="{'fake-home-layout-translate':toggleMenu}"></div>
 </main>
 

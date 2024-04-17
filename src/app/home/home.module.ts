@@ -7,6 +7,7 @@ import { ShopPageComponent } from './pages/shop/shop-page.component';
 import { DriverPageComponent } from './pages/driver/driver-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SidebarMobileComponent } from './components/sidebar-mobile/sidebar-mobile.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HeaderComponent } from './components/header/header.component';
     ShopPageComponent,
     DriverPageComponent,
     AdminPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarMobileComponent
   ],
   imports: [
     CommonModule,

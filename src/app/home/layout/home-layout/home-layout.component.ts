@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/auth/interfaces';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -9,12 +8,14 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   styleUrls: ['./home-layout.component.css'],
 })
 export class HomeLayoutComponent implements OnInit {
+  public toggleMenu:boolean = false;
   constructor(private authService: AuthService,private router:Router) {}
   get user() {
     return this.authService.currentUser;
   }
-  logout() {
-    this.authService.logout();
+  handleMenuIconClicked(){
+    this.toggleMenu = !this.toggleMenu
+    
   }
   ngOnInit(): void {
     switch (this.authService.currentUser?.type) {

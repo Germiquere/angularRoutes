@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'home-header',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  @Output() menuIconClicked: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
+  onClick() {
+    this.menuIconClicked.emit()
+  }
   ngOnInit(): void {
   }
 

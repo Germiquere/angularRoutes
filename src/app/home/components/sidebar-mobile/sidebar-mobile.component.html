@@ -1,0 +1,62 @@
+<div class="sidebarm-container">
+    <div class="sidebarm-header">
+        <img src="../../../../assets/delivery-white.png" alt="logo de la empresa">
+    </div>
+    <nav class="sidebarm-nav">
+        <ul *ngIf="rol === 'negocio'">
+           
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-box"></i>
+                    <p>Tus pedidos</p>
+                </a>
+               
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Perfil</p>
+                </a>
+               
+            </li>
+        </ul>
+        <ul *ngIf="rol === 'cadete'">
+           
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-box"></i>
+                    <p>Pedidos</p>
+                </a>
+               
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Perfil</p>
+                </a>
+               
+            </li>
+        </ul>
+        <ul *ngIf="rol === 'admin'">
+           
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-box"></i>
+                    <p>Admin</p>
+                </a>
+               
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Perfil</p>
+                </a>
+               
+            </li>
+        </ul>
+    </nav>
+    <button class="sidebarm-sign-out" (click)="logout()">
+        <p>Cerrar sesión</p>
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+</div>
