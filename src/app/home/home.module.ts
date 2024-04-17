@@ -11,6 +11,7 @@ import { SidebarMobileComponent } from './components/sidebar-mobile/sidebar-mobi
 import { OrdersPageComponent } from './pages/shop/pages/orders-page/orders-page.component';
 import { UsersPageComponent } from './pages/admin/pages/users-page/users-page.component';
 import { ProfilePageComponent } from './pages/profile/profile-page/profile-page.component';
+import { NewProductComponent } from './pages/shop/pages/new-product/new-product.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProfilePageComponent } from './pages/profile/profile-page/profile-page.
     SidebarMobileComponent,
     OrdersPageComponent,
     UsersPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    NewProductComponent
   ],
   imports: [
     CommonModule,

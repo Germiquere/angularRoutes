@@ -18,8 +18,8 @@ export class LoginPageComponent implements OnInit {
     private router: Router
   ) {}
   public loginForm: FormGroup = this.fb.group({
-    email: ['admin@admin.com', [Validators.required, Validators.email]],
-    password: ['admin123456', [Validators.required, Validators.minLength(8)]],
+    email: ['ger.miquere@gmail.com', [Validators.required, Validators.email]],
+    password: ['123qweasd', [Validators.required, Validators.minLength(8)]],
   });
   ngOnInit(): void {}
   login() {

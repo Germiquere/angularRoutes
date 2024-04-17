@@ -13,7 +13,7 @@ export class SidebarMobileComponent implements OnInit {
   public shopRoutes=[
     {
       title:"Nuevo pedido",
-      route:"/home/shop/nuevoPedido",
+      route:"/home/shop/newProduct",
       icon:"fa-solid fa-plus"
     },
     {
