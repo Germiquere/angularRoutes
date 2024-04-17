@@ -7,6 +7,9 @@ import { AdminPageComponent } from './pages/admin/admin-page.component';
 import { ShopRolGuard } from './guards/ShopRol.guard';
 import { AdminRolGuard } from './guards/AdminRol.guard';
 import { DriverRolGuard } from './guards/DriverRol.guard';
+import { OrdersPageComponent } from './pages/shop/pages/orders-page/orders-page.component';
+import { UsersPageComponent } from './pages/admin/pages/users-page/users-page.component';
+import { ProfilePageComponent } from './pages/profile/profile-page/profile-page.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,10 @@ const routes: Routes = [
         component: ShopPageComponent,
       },
       {
+        path:"shop/profile",
+        component:ProfilePageComponent
+      },
+      {
         path: 'driver',
         canActivate:[DriverRolGuard],
         component: DriverPageComponent,
@@ -28,6 +35,10 @@ const routes: Routes = [
         canActivate:[AdminRolGuard],
         component: AdminPageComponent,
       },
+      {
+        path:"admin/profile",
+        component:ProfilePageComponent
+      }
       // {
       //   path: '**',
       //   redirectTo: '',

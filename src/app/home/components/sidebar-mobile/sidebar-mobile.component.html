@@ -4,55 +4,34 @@
     </div>
     <nav class="sidebarm-nav">
         <ul *ngIf="rol === 'negocio'">
+
+            <li *ngFor="let route of shopRoutes" (click)="onClick()">
+                <a [routerLink]="route.route">
+                    <i [class]="route.icon"></i>
+                    <p>{{route.title}}</p>
+                </a>
+            </li>
            
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-box"></i>
-                    <p>Tus pedidos</p>
-                </a>
-               
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Perfil</p>
-                </a>
-               
-            </li>
         </ul>
         <ul *ngIf="rol === 'cadete'">
            
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-box"></i>
-                    <p>Pedidos</p>
+            <li *ngFor="let route of driverRoutes" (click)="onClick()">
+                <a [routerLink]="route.route">
+                    <i [class]="route.icon"></i>
+                    <p>{{route.title}}</p>
                 </a>
-               
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Perfil</p>
-                </a>
-               
-            </li>
+          
         </ul>
         <ul *ngIf="rol === 'admin'">
            
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-box"></i>
-                    <p>Admin</p>
+            <li *ngFor="let route of adminRoutes" (click)="onClick()">
+                <a [routerLink]="route.route">
+                    <i [class]="route.icon"></i>
+                    <p>{{route.title}}</p>
                 </a>
-               
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Perfil</p>
-                </a>
-               
-            </li>
+
         </ul>
     </nav>
     <button class="sidebarm-sign-out" (click)="logout()">

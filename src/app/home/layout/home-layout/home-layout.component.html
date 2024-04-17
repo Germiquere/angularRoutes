@@ -1,7 +1,7 @@
 
 <main class="animate__animated animate__fadeIn container-home-layout">
     <div class="home-sidebar-mobile">
-        <home-sidebar-mobile></home-sidebar-mobile>
+        <home-sidebar-mobile (linkClicked)="handleMenuIconClicked()"></home-sidebar-mobile>
     </div>
     <div class="home-layout" [ngClass]="{'home-layout-translate':toggleMenu}">
         <home-header (menuIconClicked)="handleMenuIconClicked()"></home-header>
