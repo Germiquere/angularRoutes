@@ -23,6 +23,7 @@ const routes: Routes = [
       },
       {
         path:"shop/profile",
+        canActivate:[ShopRolGuard],
         component:ProfilePageComponent
       },
       {
@@ -37,6 +38,7 @@ const routes: Routes = [
       },
       {
         path:"admin/profile",
+        canActivate:[AdminRolGuard],
         component:ProfilePageComponent
       }
       // {
