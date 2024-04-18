@@ -12,6 +12,7 @@ import { OrdersPageComponent } from './pages/shop/pages/orders-page/orders-page.
 import { UsersPageComponent } from './pages/admin/pages/users-page/users-page.component';
 import { ProfilePageComponent } from './pages/profile/profile-page/profile-page.component';
 import { NewProductComponent } from './pages/shop/pages/new-product/new-product.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NewProductComponent } from './pages/shop/pages/new-product/new-product.
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }
